@@ -1,5 +1,4 @@
 import os
-import re
 import sys
 import time
 import itertools
@@ -91,9 +90,9 @@ def underlinify(text: str):
     return colored(text, attrs=["underline"])
 
 
-def remove_md(text: str):
-    """Removes all markdown from text."""
-    return re.sub(r"\*\*|__|\*|_|`|~", "", text)
+def normalify(text: str):
+    """Returns text in normal font."""
+    return text[5:-4]
 
 
 def reset_data(specific_data: Literal["Leaderboard", "History"] = None):
@@ -200,7 +199,7 @@ class Board:
 
         if winning_combo:
             for index in winning_combo:
-                raw_table[index - 1] = greenify(remove_md(raw_table[index - 1]))
+                raw_table[index - 1] = greenify(normalify(raw_table[index - 1]))
 
         table_data = []
 
