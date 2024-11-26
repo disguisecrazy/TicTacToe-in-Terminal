@@ -365,7 +365,7 @@ def main():
         )
         welcome_text = (
             f"{TTT_LOGO}\n{about_text}\n\n"
-            "...Written by Anon...\n"
+            "...Written by Disguised...\n"
             "Please use the arrow keys to navigate "
             "and Enter to select."
         )
